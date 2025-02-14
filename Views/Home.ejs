@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav class="flex justify-between items-center p-4 bg-gray-100 border-b-2 border-black">
+        <h1 class="m-0 text-3xl font-bold">BahiKhata</h1>
+        <div>
+            <a href="/" class="mr-4 text-black no-underline">Home</a>
+            <a href="/create" class="px-4 py-2 bg-transparent border-2 border-transparent text-blue-500 hover:border-blue-500 rounded">Create</a>
+        </div>
+    </nav>
+
+<div class="m-4 w-auto h-auto p-5 flex flex-col justify-center items-center">
+    <div class="flex w-auto h-auto flex-col gap-6">
+        <% files.forEach(function(file){ %>
+            <div class="bg-blue-300 w-full p-3 rounded-lg flex justify-evenly gap-6 hover:bg-blue-400 duration-300 ">
+                <h3 class="text-black text-xl font-normal"> <%= file.name %> </h3>
+                <a class="text-purple-500" href="/edit/<%= file.name %>">edit</a>
+                <a class="text-red-500" href="/delete/<%= file.name %>">delete</a>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+
+</body>
+</html>

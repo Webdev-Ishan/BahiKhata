@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="w-full h-screen flex items-center justify-center p-4">
+    <form action="/update/<%= filename %>" method="post" class="w-full h-full" >
+        
+           
+            <textarea name="data" id="data" class="p-2 rounded-lg w-full h-58 bg-gray-100 resize-none overflow-hidden">
+                <%= data %>
+            </textarea>
+        
+        <div class="flex justify-end">
+            <input type="submit" value="Submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+    </form>
+</div>
+</body>
+</html>

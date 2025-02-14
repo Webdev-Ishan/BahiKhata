@@ -1,0 +1,17 @@
+{
+  "name": "bahikhata",
+  "version": "1.0.0",
+  "description": "It is a webapp based on file handling and it is used for our daily 'hisaab-kitab' with many other functionalities.It will also hold a password.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "path": "^0.12.7"
+  }
+}
