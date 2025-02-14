@@ -25,26 +25,37 @@ fs.readdir('./Files',{withFileTypes:true}, (err, files)=>{
 
 })
 
+
+
 app.get('/create', function(req,res){
 
-    const today = new Date();
-    const day = String(today.getDate()).padStart(2, '0'); // Ensure two-digit format
-    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-    const year = today.getFullYear();
-    
-    let date = `${day}-${month}-${year}.txt`;
 
-    fs.writeFile(`./Files/${date}`,'Hare ram',(err)=>{
-
-        if(err) res.status(500).send(err.message);
-
-        else{
             res.render('index.ejs');
-        }
-    })
+    
 
 })
 
+
+
+app.post('/newhisab', (req,res)=>{
+
+
+    fs.writeFile(`./Files/${req.body.heading}.txt`,req.body.hisaab,(err)=>{
+
+        if(err) res.status(400).send(err.message)
+            else{
+        
+                res.redirect('/')
+            }
+    })
+})
+
+const today = new Date();
+const day = String(today.getDate()).padStart(2, '0'); // Ensure two-digit format
+const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+const year = today.getFullYear();
+
+let date = `${day}-${month}-${year}.txt`;
 
 
 app.get('/edit/:filename', (req,res)=>{
