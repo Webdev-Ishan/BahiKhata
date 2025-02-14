@@ -20,7 +20,7 @@
     <div class="flex w-auto h-auto flex-col gap-6">
         <% files.forEach(function(file){ %>
             <div class="bg-blue-300 w-full p-3 rounded-lg flex justify-evenly gap-6 hover:bg-blue-400 duration-300 ">
-                <h3 class="text-black text-xl font-normal"> <%= file.name %> </h3>
+                <h3 class="text-black text-xl font-normal"> <a href="/show/<%= file.name%>"> <%= file.name %>  </a> </h3>
                 <a class="text-purple-500" href="/edit/<%= file.name %>">edit</a>
                 <a class="text-red-500" href="/delete/<%= file.name %>">delete</a>
             </div>

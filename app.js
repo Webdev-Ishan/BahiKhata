@@ -80,6 +80,19 @@ fs.writeFile(`./Files/${req.params.filename}`,req.body.data, (err)=>{
 
 
 
+app.get('/show/:filename',(req,res)=>{
+    fs.readFile(`./Files/${req.params.filename}`,"utf-8", (err, data)=>{
+
+        if(err) res.status(400).send(err.message);
+        else{
+    
+            res.render('show.ejs',{data, filename:req.params.filename});
+    
+        }
+    })
+
+})
+
 app.get('/delete/:filename', (req,res)=>{
 
     fs.unlink(`./Files/${req.params.filename}`,(err)=>{
